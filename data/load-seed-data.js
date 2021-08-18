@@ -27,10 +27,10 @@ async function run() {
     await Promise.all(
       discs.map(disc => {
         return client.query(`
-                    INSERT INTO discs (brand, name, speed, image, owner_id)
-                    VALUES ($1, $2, $3, $4, $5);
+                    INSERT INTO discs (brand, name, speed, awesome, image, owner_id)
+                    VALUES ($1, $2, $3, $4, $5, $6);
                 `,
-        [disc.brand, disc.name, disc.speed, disc.image, user.id]);
+        [disc.brand, disc.name, disc.speed, disc.awesome, disc.image, user.id]);
       })
     );
     

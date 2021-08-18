@@ -22,6 +22,7 @@ async function run() {
                     brand VARCHAR(120) NOT NULL,
                     name VARCHAR(512) NOT NULL,
                     speed INTEGER NOT NULL,
+                    awesome BOOLEAN NOT NULL,
                     image VARCHAR(1024) NOT NULL,
                     owner_id INTEGER NOT NULL REFERENCES users(id)
             );

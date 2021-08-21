@@ -2,6 +2,7 @@ const client = require('../lib/client');
 // import our seed data:
 const discs = require('./discs.js');
 const usersData = require('./users.js');
+const brandsData = require('./brands');
 const { getEmoji } = require('../lib/emoji.js');
 
 run();
@@ -23,6 +24,17 @@ async function run() {
     );
       
     const user = users[0].rows[0];
+
+    await Promise.all(
+      brandsData.map(brand => {
+        return client.query(`
+                      INSERT INTO brands (label)
+                      VALUES ($1)
+                      RETURNING *;
+                  `,
+        [brand.label]);
+      })
+    );
 
     await Promise.all(
       discs.map(disc => {

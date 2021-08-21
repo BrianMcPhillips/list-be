@@ -16,16 +16,20 @@ async function run() {
                     id SERIAL PRIMARY KEY,
                     email VARCHAR(256) NOT NULL,
                     hash VARCHAR(512) NOT NULL
+                );
+                CREATE TABLE brands (
+                  id SERIAL PRIMARY KEY NOT NULL,
+                  label VARCHAR(256) NOT NULL
                 );           
                 CREATE TABLE discs (
                     id SERIAL PRIMARY KEY NOT NULL,
-                    brand VARCHAR(120) NOT NULL,
+                    brand INTEGER NOT NULL REFERENCES brands(id),
                     name VARCHAR(512) NOT NULL,
                     speed INTEGER NOT NULL,
                     awesome BOOLEAN NOT NULL,
                     image VARCHAR(1024) NOT NULL,
                     owner_id INTEGER NOT NULL REFERENCES users(id)
-            );
+                );
         `);
 
     console.log('create tables complete', getEmoji(), getEmoji(), getEmoji());

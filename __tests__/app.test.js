@@ -1,8 +1,4 @@
 
-
-
-
-
 // require('dotenv').config();
 
 // const { execSync } = require('child_process');
@@ -13,7 +9,7 @@
 
 // describe('app routes', () => {
 //   describe('routes', () => {
-//     let token;
+//     // let token;
   
 //     beforeAll(async done => {
 //       execSync('npm run setup-db');
@@ -27,7 +23,7 @@
 //           password: '1234'
 //         });
       
-//       token = signInData.body.token; // eslint-disable-line
+//       // token = signInData.body.token; // eslint-disable-line
   
 //       return done();
 //     });
@@ -36,31 +32,48 @@
 //       return client.end(done);
 //     });
 
-//     test('returns animals', async() => {
+//     test('returns discs', async() => {
 
 //       const expectation = [
 //         {
-//           'id': 1,
-//           'name': 'bessie',
-//           'coolfactor': 3,
-//           'owner_id': 1
+//           name: 'Leopard',
+//           speed: 6,
+//           awesome: false,
+//           image: 'https://m.media-amazon.com/images/I/615MEcHI-dS._AC_SL1280_.jpg',
+//           brand: 'Innova'
 //         },
 //         {
-//           'id': 2,
-//           'name': 'jumpy',
-//           'coolfactor': 4,
-//           'owner_id': 1
+//           name: 'Beast',
+//           speed: 10,
+//           awesome: true,
+//           image: 'https://m.media-amazon.com/images/I/61Mtc6A+g0L._AC_SL1001_.jpg',
+//           brand: 'Innova'
 //         },
 //         {
-//           'id': 3,
-//           'name': 'spot',
-//           'coolfactor': 10,
-//           'owner_id': 1
+//           name: 'Tee-Bird',
+//           speed: 7,
+//           awesome: true,
+//           image: 'https://m.media-amazon.com/images/I/61HUfu-Ky9L._AC_SL1200_.jpg',
+//           brand: 'Innova'
+//         },
+//         {
+//           name: 'Valkyrie',
+//           speed: 9,
+//           awesome: true,
+//           image: 'https://m.media-amazon.com/images/I/61vV2suCwfL._AC_SL1001_.jpg',
+//           brand: 'Innova'
+//         },
+//         {
+//           name: 'VROC',
+//           speed: 4,
+//           awesome: false,
+//           image: 'https://m.media-amazon.com/images/I/612HP7JYMvL._AC_SX425_.jpg',
+//           brand: 'Innova'
 //         }
 //       ];
 
 //       const data = await fakeRequest(app)
-//         .get('/animals')
+//         .get('/discs')
 //         .expect('Content-Type', /json/)
 //         .expect(200);
 
